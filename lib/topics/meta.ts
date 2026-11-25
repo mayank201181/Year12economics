@@ -20,6 +20,10 @@ export interface TopicMeta {
   title: string;
   strand: Strand;
   icon: string;
+  /** Which IB Diploma year normally finishes this topic (1 = DP1 / Year 12, 2 = DP2 / Year 13). */
+  dpYear: 1 | 2;
+  /** Teaching/revision order used when ?dp=2 is active (DP2 first, then DP1). */
+  dpOrder: number;
   level: IBLevel;
   curriculum: string;
   sections: SectionPlan[];
@@ -40,6 +44,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Unit 1: Introduction to Economics",
     strand: "Unit 1: Intro to Economics",
     icon: "🧭",
+    dpYear: 1,
+    dpOrder: 5,
     level: "SL",
     curriculum: "IB Economics FA2022 1.1 What is economics? & 1.2 How do economists approach the world? (9 Key Concepts)",
     sections: [
@@ -76,6 +82,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Unit 2A: Demand, Supply, Elasticities & Government Intervention",
     strand: "Unit 2: Microeconomics",
     icon: "⚖️",
+    dpYear: 1,
+    dpOrder: 6,
     level: "SL",
     curriculum: "IB Economics FA2022 2.1–2.7 Markets, Behavioural Economics [HL], PED/YED/PES & Government Intervention",
     sections: [
@@ -110,6 +118,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Unit 2B: Market Failure, Market Power & Equity",
     strand: "Unit 2: Microeconomics",
     icon: "🏭",
+    dpYear: 1,
+    dpOrder: 7,
     level: "SL",
     curriculum: "IB Economics FA2022 2.8–2.12 Externalities, Public Goods, Asymmetric Info [HL], Market Power [HL] & Equity [HL]",
     sections: [
@@ -146,6 +156,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Unit 3A: Macroeconomic Activity, Objectives & Inequality",
     strand: "Unit 3: Macroeconomics",
     icon: "🏛️",
+    dpYear: 1,
+    dpOrder: 8,
     level: "SL",
     curriculum: "IB Economics FA2022 3.1 Measuring Activity, 3.2 AD/AS, 3.3 Macro Objectives & Phillips Curve [HL], 3.4 Inequality",
     sections: [
@@ -180,6 +192,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Unit 3B: Demand-Side & Supply-Side Macroeconomic Policies",
     strand: "Unit 3: Macroeconomics",
     icon: "🏦",
+    dpYear: 2,
+    dpOrder: 1,
     level: "SL",
     curriculum: "IB Economics FA2022 3.5 Monetary Policy, 3.6 Fiscal Policy & Keynesian Multiplier [HL], 3.7 Supply-Side Policies",
     sections: [
@@ -216,6 +230,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Unit 4A: International Trade, Protectionism & Economic Integration",
     strand: "Unit 4: The Global Economy",
     icon: "🚢",
+    dpYear: 2,
+    dpOrder: 2,
     level: "SL",
     curriculum: "IB Economics FA2022 4.1 Comparative Advantage [HL], 4.2–4.3 Trade Protection, 4.4 Economic Integration & WTO",
     sections: [
@@ -250,6 +266,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Unit 4B: Exchange Rates, Balance of Payments & Economic Development",
     strand: "Unit 4: The Global Economy",
     icon: "🌍",
+    dpYear: 2,
+    dpOrder: 3,
     level: "SL",
     curriculum: "IB Economics FA2022 4.5 Exchange Rates, 4.6 BoP & Marshall–Lerner [HL], 4.7–4.10 Sustainable Development",
     sections: [
@@ -286,6 +304,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Unit 5 (HL): Paper 3 Quantitative Modelling & Policy Recommendations",
     strand: "HL Paper 3: Policy & Modelling",
     icon: "🧮",
+    dpYear: 2,
+    dpOrder: 4,
     level: "HL",
     curriculum: "IB Economics FA2022 HL Paper 3 (30%, 1h 45m, 60 marks): Cross-Unit Quantitative Mastery & 10-Mark Policy Synthesis",
     sections: [
